@@ -1,14 +1,17 @@
 <template>
-  <div id="app">
-
-  </div>
+    <v-app>
+        <v-main>
+            elo
+        </v-main>
+    </v-app>
 </template>
 
 <script>
 
-
-export default {
-  name: 'App',
-}
+    export default {
+        name: 'App',
+        data: () => ({
+            //
+        }),
+    };
 </script>
-
