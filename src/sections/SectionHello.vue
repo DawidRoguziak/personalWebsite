@@ -1,5 +1,5 @@
 <template>
-    <v-row :align="'center'" :justify="'center'" class="full-vh">
+    <v-row :align="'center'" :justify="'center'" class="full-vh welcome-section">
         <v-col :align="'right'">
             <img :src="image" class="full-vh display-xs-none">
         </v-col>
@@ -65,6 +65,21 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .welcome-section {
+        background-image: radial-gradient(circle, #ffffff, #f3f3f3, #e7e7e7, #dbdbdb, #cfcfcf, #b8b8b8, #a2a2a2, #8c8c8c, #676767, #454545, #252525, #000000);
+        color: $fontColorLight;
 
+        .right-side {
+            color: #111;
+        }
+
+        .who-i-am {
+            margin: 0 0 0 5px;
+            letter-spacing: .10em;
+            font-weight: 700;
+            font-size: 28px;
+            min-width: 315px;
+        }
+    }
 </style>
