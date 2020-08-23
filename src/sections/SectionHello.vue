@@ -1,7 +1,7 @@
 <template>
     <v-row :align="'center'" :justify="'center'" class="full-vh welcome-section">
         <v-col :align="'right'">
-            <img :src="image" class="full-vh display-xs-none">
+            <img :src="image" class="full-vh display-xs-none face-img">
         </v-col>
 
         <v-col>
@@ -32,6 +32,7 @@
 
 <script>
     import TypeWriter from "../components/TypeWriter";
+    import gsap from 'gsap';
 
     export default {
         name: "SectionHello",
@@ -45,6 +46,22 @@
                     dev: 'Frontend Developer.'
                 },
                 image: require('./../assets/img/section-face.webp')
+            }
+        },
+
+        mounted() {
+            this.initAnimations();
+        },
+
+        methods: {
+            initAnimations() {
+
+                const faceImg = document.querySelector('.face-img');
+                gsap.set([faceImg], {autoAlpha: 0});
+
+                const  t1 = gsap.timeline({defaults: {ease: 'power3.onOut'}});
+
+                t1.fromTo(faceImg, {x: '-=300'}, {x: '+=300', duration: 1, autoAlpha: 1});
             }
         },
 
