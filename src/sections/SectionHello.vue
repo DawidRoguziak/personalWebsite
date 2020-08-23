@@ -1,0 +1,70 @@
+<template>
+    <v-row :align="'center'" :justify="'center'" class="full-vh">
+        <v-col :align="'right'">
+            <img :src="image" class="full-vh display-xs-none">
+        </v-col>
+
+        <v-col>
+            <div class="who-i-am right-side">
+                <div>
+                    <type-writer :letters-to-wrap="[0]"
+                                 :word="rightText.hello"
+                                 :type-speed="typeSpeed"/>
+                </div>
+                <div>
+                    <type-writer :letters-to-wrap="[0]"
+                                 :word="rightText.name"
+                                 :type-speed="typeSpeed"
+                                 :wait="rightTextNameWait"/>
+                </div>
+                <div>
+                    <type-writer :letters-to-wrap="[0,1,2,3,4]"
+                                 :word="rightText.dev"
+                                 :type-speed="typeSpeed"
+                                 :wait="rightTextDevWait"
+                                 :infinity="true"/>
+                </div>
+            </div>
+        </v-col>
+    </v-row>
+
+</template>
+
+<script>
+    import TypeWriter from "../components/TypeWriter";
+
+    export default {
+        name: "SectionHello",
+        components: {TypeWriter},
+        data() {
+            return {
+                typeSpeed: 180,
+                rightText: {
+                    hello: 'Hey.',
+                    name: 'I am David.',
+                    dev: 'Frontend Developer.'
+                },
+                image: require('./../assets/img/section-face.webp')
+            }
+        },
+
+        computed: {
+            rightTextNameWait() {
+                return this.rightText.hello.length * this.typeSpeed;
+            },
+
+            rightTextDevWait() {
+                return this.rightTextNameWait + (this.rightText.name.length * this.typeSpeed)
+            },
+
+            isMobileComputed() {
+                return this.isMobile()
+            }
+        },
+
+    }
+</script>
+
+<style scoped>
+
+</style>
