@@ -2,6 +2,7 @@
     <v-app>
         <v-main>
             <SectionHello/>
+            <AboutMeSection/>
         </v-main>
     </v-app>
 </template>
@@ -9,9 +10,10 @@
 <script>
 
     import SectionHello from "./sections/SectionHello";
+    import AboutMeSection from "./sections/AboutMeSection";
     export default {
         name: 'App',
-        components: {SectionHello},
+        components: {AboutMeSection, SectionHello},
         data: () => ({
             //
         }),

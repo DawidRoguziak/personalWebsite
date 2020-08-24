@@ -55,12 +55,10 @@
 
         methods: {
             initAnimations() {
-
                 const faceImg = document.querySelector('.face-img');
                 gsap.set([faceImg], {autoAlpha: 0});
 
                 const  t1 = gsap.timeline({defaults: {ease: 'power3.onOut'}});
-
                 t1.fromTo(faceImg, {x: '-=300'}, {x: '+=300', duration: 1, autoAlpha: 1});
             }
         },
