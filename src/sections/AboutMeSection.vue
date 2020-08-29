@@ -168,16 +168,9 @@
 </template>
 
 <script>
-    import gsap from 'gsap';
-    import {ScrollTrigger} from "gsap/ScrollTrigger";
-
 
     export default {
         name: "AboutMeSection",
-
-        created() {
-            gsap.registerPlugin(ScrollTrigger);
-        },
 
         mounted() {
             this.initAnimation();
@@ -191,8 +184,8 @@
                 const leftArm = document.querySelector('.left-arm');
                 const rightArm = document.querySelector('.right-arm');
 
-                gsap.set([leftArm, rightArm], {});
-                const t1 = gsap.timeline({defaults: {ease: 'power3.onOut'}});
+                this.$gsap.set([leftArm, rightArm], {});
+                const t1 = this.$gsap.timeline({defaults: {ease: 'power3.onOut'}});
                 t1.fromTo(leftArm,
                     {
                         rotate: '-=20',
