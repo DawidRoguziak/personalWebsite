@@ -74,15 +74,7 @@
                 });
 
                 t1
-                    .fromTo(svg, {
-                            opacity: 0,
-                            y: '-=50',
-                        },
-                        {
-                            opacity: 1,
-                            duration: 1,
-                            y: '+=50',
-                        })
+                    .fromTo(svg, this.textAnimationSettingsFrom, this.textAnimationSettingsTo)
                     .fromTo(firstText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo)
                     .fromTo(secondText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo)
                     .fromTo(thirdText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo);
@@ -158,6 +150,12 @@
                 margin-top: 50px;
             }
 
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .about-me-section > div {
+            margin-top: 100px;
         }
     }
 </style>

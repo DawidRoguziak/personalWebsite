@@ -8,15 +8,11 @@
 </template>
 
 <script>
-
     import SectionHello from "./sections/SectionHello";
     import AboutMeSection from "./sections/AboutMeSection";
     export default {
         name: 'App',
         components: {AboutMeSection, SectionHello},
-        data: () => ({
-            //
-        }),
     };
 </script>
 
