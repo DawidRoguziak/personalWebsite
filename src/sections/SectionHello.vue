@@ -1,4 +1,5 @@
 <template>
+    <section id="hello">
     <v-row :align="'center'" :justify="'center'" class="full-vh welcome-section">
         <v-col :align="'right'">
             <img :src="image" class="full-vh display-xs-none face-img">
@@ -27,7 +28,7 @@
             </div>
         </v-col>
     </v-row>
-
+    </section>
 </template>
 
 <script>

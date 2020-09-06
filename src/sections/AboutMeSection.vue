@@ -1,27 +1,95 @@
 <template>
-    <v-row class="full-vh about-me-section">
-        <v-col cols="12">
-            <v-row class="full-vh about-me-section">
-                <v-col :align="'center'" cols="12">
-                    <s-v-g-about-me></s-v-g-about-me>
-                </v-col>
-            </v-row>
-        </v-col>
-    </v-row>
+    <section id="about-me">
+        <v-row class="full-vh about-me-section">
+            <v-col cols="12">
+                <v-row class="full-vh about-me-section relative">
+                    <v-col :align="'center'" cols="12" sm="12" md="12" xl="6" class="relative">
+                        <s-v-g-about-me></s-v-g-about-me>
+                    </v-col>
+                    <v-col :align="'center'" cols="12" sm="12" md="12" xl="6" class="relative">
+                        <p class="first-text">
+                            I'm David frontend developer from Lublin, Poland.
+                        </p>
+
+                        <p class="second-text">
+                            What do I do? I create web applications with VueJs.<br/>
+                            What I like? I like use new technologies.<br/>
+                            What I hate? I hate wordpress.
+                        </p>
+
+                        <p class="third-text">
+                            Sometimes I like break my terminal or make some vector graphics.
+                        </p>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
+    </section>
 </template>
 
 <script>
     import SVGAboutMe from "../components/svg/SVGAboutMe";
+
     export default {
         name: "AboutMeSection",
         components: {SVGAboutMe},
+        data() {
+            return {
+                textAnimationSettingsFrom: {
+                    opacity: 0,
+                    y: '-=50',
+                },
+                textAnimationSettingsTo: {
+                    opacity: 1,
+                    duration: 1,
+                    y: '+=50',
+                }
+            }
+        },
+
         mounted() {
             this.initAnimation();
         },
 
         methods: {
             initAnimation() {
+                this.textAnimation();
+                this.armsAnimation();
+            },
 
+            textAnimation() {
+                const firstText = document.querySelector('.first-text');
+                const secondText = document.querySelector('.second-text');
+                const thirdText = document.querySelector('.third-text');
+                const svg = document.querySelector('.am-wrapper');
+
+                this.$gsap.set([firstText, secondText, thirdText, svg], {});
+
+                const t1 = this.$gsap.timeline({
+                    scrollTrigger: {
+                        start: 'top 20%',
+                        trigger: '.am-wrapper',
+                    },
+                    defaults: {ease: 'power3.onOut'}
+                });
+
+                t1
+                    .fromTo(svg, {
+                            opacity: 0,
+                            y: '-=50',
+                        },
+                        {
+                            opacity: 1,
+                            duration: 1,
+                            y: '+=50',
+                        })
+                    .fromTo(firstText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo)
+                    .fromTo(secondText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo)
+                    .fromTo(thirdText, this.textAnimationSettingsFrom, this.textAnimationSettingsTo);
+
+            },
+
+            armsAnimation() {
                 const leftArm = document.querySelector('.left-arm');
                 const rightArm = document.querySelector('.right-arm');
 
@@ -66,7 +134,6 @@
 
                 t1.repeat(-1);
                 t2.repeat(-1);
-
             }
 
         }
@@ -76,5 +143,21 @@
 <style lang="scss" scoped>
     .about-me-section {
         background: $backgroundColor;
+
+        p {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .first-text, .second-text, .third-text {
+            margin-top: 100px
+        }
+
+        @media (max-width: 780px) {
+            .first-text, .second-text, .third-text {
+                margin-top: 50px;
+            }
+
+        }
     }
 </style>
