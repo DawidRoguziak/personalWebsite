@@ -143,10 +143,6 @@
             font-size: 20px;
         }
 
-        .first-text, .second-text, .third-text {
-            margin-top: 100px
-        }
-
         @media (max-width: 780px) {
             .first-text, .second-text, .third-text {
                 margin-top: 50px;
@@ -155,11 +151,17 @@
         }
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1441px) {
+        .first-text, .second-text, .third-text {
+            margin-top: 100px;
+        }
+
+        .left-side, .right-side {
+            margin-top: 150px;
+        }
+
         .about-me-section {
-            .left-side, .right-side {
-                margin-top: 100px;
-            }
+
         }
     }
 </style>
