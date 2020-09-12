@@ -1,18 +1,20 @@
 <template>
     <v-app>
         <v-main>
-            <SectionHello/>
+            <HelloSection/>
             <AboutMeSection/>
+            <ProjectSection/>
         </v-main>
     </v-app>
 </template>
 
 <script>
-    import SectionHello from "./sections/SectionHello";
+    import HelloSection from "./sections/HelloSection";
     import AboutMeSection from "./sections/AboutMeSection";
+    import ProjectSection from "./sections/ProjectSection";
     export default {
         name: 'App',
-        components: {AboutMeSection, SectionHello},
+        components: {ProjectSection, AboutMeSection, HelloSection},
     };
 </script>
 

@@ -4,22 +4,24 @@
             <v-col cols="12">
                 <v-row class="full-vh about-me-section relative">
                     <v-col :align="'center'" cols="12" sm="12" md="12" xl="6" class="relative">
-                        <s-v-g-about-me></s-v-g-about-me>
+                        <s-v-g-about-me :class="'left-side'"></s-v-g-about-me>
                     </v-col>
                     <v-col :align="'center'" cols="12" sm="12" md="12" xl="6" class="relative">
-                        <p class="first-text">
-                            I'm David frontend developer from Lublin, Poland.
-                        </p>
+                        <div class="right-side">
+                            <p class="first-text">
+                                I'm David frontend developer from Lublin, Poland.
+                            </p>
 
-                        <p class="second-text">
-                            What do I do? I create web applications with VueJs.<br/>
-                            What I like? I like use new technologies.<br/>
-                            What I hate? I hate wordpress.
-                        </p>
+                            <p class="second-text">
+                                What do I do? I create web applications with VueJs.<br/>
+                                What I like? I like use new technologies.<br/>
+                                What I hate? I hate wordpress.
+                            </p>
 
-                        <p class="third-text">
-                            Sometimes I like break my terminal or make some vector graphics.
-                        </p>
+                            <p class="third-text">
+                                Sometimes I like break my terminal or make some vector graphics.
+                            </p>
+                        </div>
                     </v-col>
                 </v-row>
             </v-col>
@@ -138,7 +140,7 @@
 
         p {
             color: #fff;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         .first-text, .second-text, .third-text {
@@ -154,8 +156,10 @@
     }
 
     @media (min-width: 1024px) {
-        .about-me-section > div {
-            margin-top: 100px;
+        .about-me-section {
+            .left-side, .right-side {
+                margin-top: 100px;
+            }
         }
     }
 </style>
