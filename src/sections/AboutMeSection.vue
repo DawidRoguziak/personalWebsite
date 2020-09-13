@@ -43,7 +43,7 @@
                 },
                 textAnimationSettingsTo: {
                     opacity: 1,
-                    duration: 1,
+                    duration: 0.5,
                     y: '+=50',
                 }
             }
