@@ -1,11 +1,10 @@
 <template>
     <section id="hello">
     <v-row :align="'center'" :justify="'center'" class="full-vh welcome-section">
-        <v-col class="padding-0" :align="'right'" cols="12" sm="12" md="12" xl="6">
+        <v-col  :align="'right'" cols="12" sm="12" md="12" xl="6" class="display-xs-none">
             <img :src="image" class="full-vh display-xs-none face-img">
         </v-col>
-
-        <v-col class="padding-0" cols="12" sm="12" md="12" xl="6" >
+        <v-col cols="12" sm="12" md="12" xl="6" >
             <div class="who-i-am right-side">
                 <div>
                     <type-writer :letters-to-wrap="[0]"

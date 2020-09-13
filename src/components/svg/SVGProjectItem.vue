@@ -1,5 +1,5 @@
 <template>
-    <a :href="getAProps.link" :target="getAProps.target" :style="svgStyle">
+    <a :href="getAProps.link" :id="elemId" :target="getAProps.target" :style="svgStyle" style="display: block">
         <svg ref="svgElem" class="relative" viewBox="0 0 282 262" fill="none"
              xmlns="http://www.w3.org/2000/svg">
             <path :style="rotateSVG" ref="hex" id="project-item-hex"
@@ -82,6 +82,11 @@
             },
 
             link: {
+                type: String,
+                default: ''
+            },
+
+            elemId: {
                 type: String,
                 default: ''
             }

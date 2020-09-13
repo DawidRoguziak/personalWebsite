@@ -87,7 +87,6 @@
                 const leftArm = document.querySelector('.left-arm');
                 const rightArm = document.querySelector('.right-arm');
 
-                this.$gsap.set([leftArm, rightArm], {});
                 const t1 = this.$gsap.timeline({defaults: {ease: 'power3.onOut'}});
                 const t2 = this.$gsap.timeline({defaults: {ease: 'power3.onOut'}});
 
@@ -137,6 +136,7 @@
 <style lang="scss" scoped>
     .about-me-section {
         background: $backgroundColor;
+        padding-top: 50px;
 
         p {
             color: #fff;
