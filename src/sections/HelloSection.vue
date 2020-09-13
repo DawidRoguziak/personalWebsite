@@ -88,6 +88,10 @@
             color: #111;
         }
 
+        .face-img {
+            max-height: 99vh;
+        }
+
         .who-i-am {
             margin: 0 0 0 5px;
             letter-spacing: .10em;
