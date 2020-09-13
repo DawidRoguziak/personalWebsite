@@ -4,6 +4,7 @@
             <HelloSection/>
             <AboutMeSection/>
             <ProjectSection/>
+            <ContactSection/>
         </v-main>
     </v-app>
 </template>
@@ -12,9 +13,10 @@
     import HelloSection from "./sections/HelloSection";
     import AboutMeSection from "./sections/AboutMeSection";
     import ProjectSection from "./sections/ProjectSection";
+    import ContactSection from "./sections/ContactSection";
     export default {
         name: 'App',
-        components: {ProjectSection, AboutMeSection, HelloSection},
+        components: {ContactSection, ProjectSection, AboutMeSection, HelloSection},
     };
 </script>
 
