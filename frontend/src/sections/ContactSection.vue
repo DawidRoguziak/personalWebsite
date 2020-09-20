@@ -15,7 +15,7 @@
                                             v-slot="{ invalid, validated, passes, validate }">
                             <v-row>
                                 <v-col>
-                                    <ValidationProvider name="Name" rules="required|max:100"
+                                    <ValidationProvider name="Name" rules="required|max:100|email"
                                                         v-slot="{ errors, valid }">
                                         <v-text-field v-model="formData.email"
                                                       :counter="100"
@@ -67,6 +67,7 @@
                             <v-row>
                                 <v-col>
                                     <v-btn :block="true"
+                                           @click="sendEmail"
                                            color="rgb(108, 99, 255)">
                                         SEND
                                     </v-btn>
@@ -95,6 +96,15 @@
                     title: '',
                     message: ''
                 }
+            }
+        },
+
+        methods: {
+            sendEmail() {
+                this.$emailService.sendEmail(this.formData)
+                .then((response) => {
+                    console.log(response.data);
+                });
             }
         }
     }
