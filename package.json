@@ -2,10 +2,10 @@
   "name": "personalwebsite",
   "version": "1.0.0",
   "description": "backend for personal website",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/",
-    "dev": "nodemon src/"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.11"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
