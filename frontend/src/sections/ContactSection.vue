@@ -179,7 +179,7 @@
                             title: 'Message already sended!!!',
                             type: 'warning',
                             text: '',
-                            position: 'top center'
+                            position: 'top'
                         });
                         return;
                     }
@@ -196,12 +196,12 @@
                                 title: res.notify,
                                 type: res.success ? 'success' : 'warning',
                                 text: '',
-                                position: 'top center'
+                                position: 'top'
                             });
                         });
 
                         delete this.formData.token;
-                        this.oldFormData = this.formData;
+                        this.oldFormData = JSON.parse(JSON.stringify(this.formData));
                     });
                 });
             },
