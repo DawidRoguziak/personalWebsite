@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const port = 8001;
+const port = process.env.PORT || 5000;
 const emailService = require("./src/api/EmailService");
 
 app.use("/api/email", emailService);
