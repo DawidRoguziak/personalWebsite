@@ -116,6 +116,8 @@
                                     <v-col>
                                         <v-btn
                                                 :block="true"
+                                                :disabled="isLoading"
+                                                :loading="isLoading"
                                                 type="button"
                                                 @click="sendEmail"
                                                 color="rgb(108, 99, 255)"
@@ -142,6 +144,7 @@
         components: {SVGMedia, ValidationObserver, ValidationProvider},
         data() {
             return {
+                isLoading: false,
                 valid: true,
                 oldFormData: null,
                 formData: {
@@ -184,8 +187,8 @@
                         return;
                     }
 
+                    this.loading = true;
                     grecaptcha.execute(this.$reCaptcha.publicKey, {action: 'contactForm'}).then((token) => {
-
                         this.formData.token = token;
 
                         this.$emailService.sendEmail(this.formData).then((response) => {
@@ -198,6 +201,8 @@
                                 text: '',
                                 position: 'top'
                             });
+
+                            this.loading = false;
                         });
 
                         delete this.formData.token;
