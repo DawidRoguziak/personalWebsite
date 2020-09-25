@@ -14,8 +14,8 @@ class EmailSender {
             host: "SMTP.office365.com",
             port: 587,
             tls: {
-                // ciphers:'SSLv3'
-                rejectUnauthorized: false,
+                ciphers:'SSLv3'
+                // rejectUnauthorized: false,
             },
             secure: false,
             auth: {
