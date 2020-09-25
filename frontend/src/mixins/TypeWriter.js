@@ -1,21 +1,18 @@
 const TypeWriter = {
-    data() {
-        return{
-            typeWriter: {
-                words: [],
-                text: '',
-                wordIndex: 0,
-                wait: 3000,
-            }
-        }
-    },
+     data() {
+          return {
+               typeWriter: {
+                    words: [],
+                    text: "",
+                    wordIndex: 0,
+                    wait: 3000,
+               },
+          };
+     },
 
-    method: {
-        typeWriterType() {
-
-        }
-    }
-
-}
+     method: {
+          typeWriterType() {},
+     },
+};
 
 export default TypeWriter;

@@ -1,6 +1,3 @@
 class GoogleRecaptcha {
-
-    constructor() {
-    }
-
+     constructor() {}
 }

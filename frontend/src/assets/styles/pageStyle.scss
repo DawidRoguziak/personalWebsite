@@ -1,39 +1,40 @@
-html, body {
-  padding: 0;
-  margin: 0;
+html,
+body {
+     padding: 0;
+     margin: 0;
 
-    scroll-behavior: smooth;
+     scroll-behavior: smooth;
 
-  height: 100%;
-  background: $backgroundColor;
-  font-family: 'Raleway', sans-serif;
+     height: 100%;
+     background: $backgroundColor;
+     font-family: "Raleway", sans-serif;
 
-  width: 100vw;
-  min-height: 100vh;
+     width: 100vw;
+     min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
-  display: none;
+     display: none;
 }
 
 .full-vh {
-  min-height: 100vh;
+     min-height: 100vh;
 }
 
 .relative {
-  position: relative;
+     position: relative;
 }
 
 .center-item {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
 }
 .opacity-0 {
-  opacity: 0;
+     opacity: 0;
 }
 
 .main-color {
-  background: $mainColor;
+     background: $mainColor;
 }

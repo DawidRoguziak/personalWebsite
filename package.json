@@ -1,30 +1,31 @@
 {
-  "name": "personalwebsite",
-  "version": "1.0.0",
-  "description": "backend for personal website",
-  "main": "app.js",
-  "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DawidRoguziak/personalWebsite.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DawidRoguziak/personalWebsite/issues"
-  },
-  "homepage": "https://github.com/DawidRoguziak/personalWebsite#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "nodemailer": "^6.4.11"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+     "name": "personalwebsite",
+     "version": "1.0.0",
+     "description": "backend for personal website",
+     "main": "app.js",
+     "scripts": {
+          "start": "node src/app.js",
+          "dev": "nodemon src/app.js"
+     },
+     "repository": {
+          "type": "git",
+          "url": "git+https://github.com/DawidRoguziak/personalWebsite.git"
+     },
+     "author": "",
+     "license": "ISC",
+     "bugs": {
+          "url": "https://github.com/DawidRoguziak/personalWebsite/issues"
+     },
+     "homepage": "https://github.com/DawidRoguziak/personalWebsite#readme",
+     "dependencies": {
+          "body-parser": "^1.19.0",
+          "cors": "^2.8.5",
+          "dotenv": "^8.2.0",
+          "express": "^4.17.1",
+          "nodemailer": "^6.4.11"
+     },
+     "devDependencies": {
+          "nodemon": "^2.0.4",
+          "prettier": "2.1.2"
+     }
 }
