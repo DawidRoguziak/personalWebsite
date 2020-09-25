@@ -2,10 +2,10 @@
      "name": "personalwebsite",
      "version": "1.0.0",
      "description": "backend for personal website",
-     "main": "app.js",
+     "main": "index.js",
      "scripts": {
-          "start": "node src/app.js",
-          "dev": "nodemon src/app.js"
+          "start": "node index.js",
+          "dev": "nodemon app.js"
      },
      "repository": {
           "type": "git",
