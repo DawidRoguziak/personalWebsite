@@ -1,39 +1,28 @@
 const express = require("express");
 const router = express.Router();
-const nodemailer = require("nodemailer");
+const EmailSender = require('./../services/EmailSender')
 
 router.post("/", (req, res) => {
-     const message = {
-          from: `Test mail <${process.env.MAIL_LOGIN}>`,
-          to: "",
-          subject: "",
-          text: "Test message",
-          html: "<p>Test message</p>",
-     };
 
-     const transporter = nodemailer.createTransport({
-          host: "SMTP.office365.com",
-          port: 587,
-          tls: {
-               // ciphers:'SSLv3'
-               rejectUnauthorized: false,
-          },
-          secure: false,
-          auth: {
-               user: process.env.MAIL_LOGIN,
-               pass: process.env.MAIL_PASSWORD,
-          },
-     });
+    const email = req.body.email || null;
+    const title = req.body.title || null;
+    const message = req.body.message || null;
 
-     transporter.sendMail(message, (error, info) => {
-          if (error) {
-               return console.log(error);
-          }
+    if (!email || !title || !message) {
+        res.send({success: false, error: null, notify: 'Missing data'});
+    }
 
-          return console.log("poszło");
-     });
+    const emailSender = new EmailSender({
+        email,
+        title,
+        message
+    });
 
-     res.send({ ala: "test" });
+    emailSender
+        .sendMail()
+        .then((result) => {
+            res.send(result);
+        });
 });
 
 module.exports = router;
