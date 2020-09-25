@@ -5,6 +5,7 @@
                <AboutMeSection />
                <ProjectSection />
                <ContactSection />
+               <notifications group="notify" />
           </v-main>
      </v-app>
 </template>

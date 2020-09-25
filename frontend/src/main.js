@@ -5,8 +5,13 @@ import "./plugins/gsap";
 import "./plugins/veeValidate";
 import "./plugins/axios";
 import "./api/emailService";
+import "./plugins/notifications"
 
 Vue.config.productionTip = false;
+
+Vue.prototype.$reCaptcha = {
+     publicKey: '6Le3fNAZAAAAANgQHGbcvJ84uIm6_r5rCkfAAWNM'
+}
 
 new Vue({
      vuetify,
