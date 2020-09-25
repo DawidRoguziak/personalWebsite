@@ -187,7 +187,7 @@
                         return;
                     }
 
-                    this.loading = true;
+                    this.isLoading = true;
                     grecaptcha.execute(this.$reCaptcha.publicKey, {action: 'contactForm'}).then((token) => {
                         this.formData.token = token;
 
@@ -202,7 +202,7 @@
                                 position: 'top'
                             });
 
-                            this.loading = false;
+                            this.isLoading = false;
                         });
 
                         delete this.formData.token;
