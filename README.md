@@ -1,3 +1,3 @@
 # personalwebsite
 
-See [Website](https://dawidroguziak.com/)
+See [Website](http://www.dawidroguziak.com/)
